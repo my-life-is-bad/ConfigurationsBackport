@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.7",
+  "package": "my_life_is_bad.configurationsbackport.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinEnumHolder",
+    "MixinFMLModContainer",
+    "MixinFMLClientHandler",
+    "MixinProperty",
+    "MixinConfigElement",
+    "MixinGuiConfigEntries"
+  ],
+  "client": [],
+  "server": []
+}

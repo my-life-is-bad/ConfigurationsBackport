@@ -1,0 +1,16 @@
+[
+{
+  "modid": "configurationsbackport",
+  "name": "ConfigurationsBackport",
+  "description": "\u00A7aBackports the forge Config annotation system from 1.12.2 to 1.8.9.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["my_life_is_bad"],
+  "credits": "",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
