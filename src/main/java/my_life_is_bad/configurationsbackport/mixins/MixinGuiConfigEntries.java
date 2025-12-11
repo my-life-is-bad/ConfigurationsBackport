@@ -19,44 +19,6 @@ import org.spongepowered.asm.mixin.Final;
 @Mixin(targets = "net.minecraftforge.fml.client.config.GuiConfigEntries")
 public class MixinGuiConfigEntries {
 
-    //     @Redirect(
-    //     method = "<init>(Lnet/minecraftforge/fml/client/config/GuiConfig;Lnet/minecraft/client/Minecraft;)V",
-    //     at = @At(
-    //         value = "NEW",
-    //         target = "Lnet/minecraftforge/fml/client/config/GuiConfigEntries$IntegerEntry;<init>(Lnet/minecraftforge/fml/client/config/GuiConfig;Lnet/minecraftforge/fml/client/config/GuiConfigEntries;Lnet/minecraftforge/fml/client/config/IConfigElement;)V",
-    //         remap = false
-    //     )
-    // )
-    // private GuiConfigEntries.IConfigEntry redirectIntegerEntry(GuiConfig owningScreen, GuiConfigEntries owningEntryList, IConfigElement configElement) {
-    //     IMixinProperty ext = (IMixinProperty)(Object) configElement;
-
-    //     if (ext.hasSlidingControl()) {
-    //         return new GuiConfigEntries.NumberSliderEntry(owningScreen, (GuiConfigEntries)(Object)this, configElement);
-    //     } else {
-    //         return new GuiConfigEntries.IntegerEntry(owningScreen, (GuiConfigEntries)(Object)this, configElement);
-    //     }
-    // }
-
-
-    // @Redirect(
-    //     method = "<init>(Lnet/minecraftforge/fml/client/config/GuiConfig;Lnet/minecraft/client/Minecraft;)V",
-    //     at = @At(
-    //         value = "NEW",
-    //         target = "Lnet/minecraftforge/fml/client/config/GuiConfigEntries$DoubleEntry;<init>(Lnet/minecraftforge/fml/client/config/GuiConfig;Lnet/minecraftforge/fml/client/config/GuiConfigEntries;Lnet/minecraftforge/fml/client/config/IConfigElement;)V",
-    //         remap = false
-    //     )
-    // )
-    // private GuiConfigEntries.IConfigEntry redirectDoubleEntry(GuiConfig owningScreen, GuiConfigEntries owningEntryList, IConfigElement configElement) {
-    //     IMixinProperty ext = (IMixinProperty)(Object) configElement;
-
-    //     if (ext.hasSlidingControl()) {
-    //         return new GuiConfigEntries.NumberSliderEntry(owningScreen, (GuiConfigEntries)(Object)this, configElement);
-    //     } else {
-    //         return new GuiConfigEntries.DoubleEntry(owningScreen, (GuiConfigEntries)(Object)this, configElement);
-    //     }
-    // }
-
-
     @Redirect(method = "<init>", at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 3))
     private boolean redirectIntegerAdd(List<Object> list, Object entry) {
         GuiConfigEntries self = (GuiConfigEntries)(Object)this;
