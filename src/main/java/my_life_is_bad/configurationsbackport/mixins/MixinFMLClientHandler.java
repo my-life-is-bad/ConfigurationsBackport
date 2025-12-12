@@ -31,7 +31,7 @@ public class MixinFMLClientHandler {
         String original = mc.getGuiClassName();
         if (original == null || original.isEmpty()) {
             if (ConfigManager.hasConfigForMod(mc.getModId())) {
-                guiFactories.put(mc, DefaultGuiFactory.forMod(mc));
+                guiFactories.put(mc, new DefaultGuiFactory());
             }
         }
         return original;

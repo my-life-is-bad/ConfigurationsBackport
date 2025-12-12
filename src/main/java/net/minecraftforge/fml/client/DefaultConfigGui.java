@@ -5,6 +5,8 @@ import net.minecraftforge.fml.client.config.GuiConfig;
 import net.minecraftforge.fml.client.config.IConfigElement;
 import net.minecraftforge.common.config.ConfigManager;
 
+import my_life_is_bad.configurationsbackport.mixins.MixinGuiModList;
+
 import java.util.List;
 
 public class DefaultConfigGui extends GuiConfig {
@@ -13,12 +15,12 @@ public class DefaultConfigGui extends GuiConfig {
         super(
             parent,
             DefaultGuiFactory.collectConfigElements(
-                ConfigManager.getModConfigClasses(DefaultGuiFactory.lastModid)
+                ConfigManager.getModConfigClasses(((MixinGuiModList)(Object) parent).getSelectedMod().getModId())
             ),
-            DefaultGuiFactory.lastModid,
+            ((MixinGuiModList)(Object) parent).getSelectedMod().getModId(),
             false,
             false,
-            DefaultGuiFactory.lastTitle
+            ((MixinGuiModList)(Object) parent).getSelectedMod().getName()
         );
     }
 }

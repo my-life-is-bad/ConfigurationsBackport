@@ -27,18 +27,6 @@ public class DefaultGuiFactory implements IModGuiFactory
     protected String modid, title;
     protected Minecraft minecraft;
 
-    public static String lastModid;
-    public static String lastTitle;
-
-    protected DefaultGuiFactory(String modid, String title)
-    {
-        this.modid = modid;
-        this.title = title;
-
-        lastModid = modid;
-        lastTitle = title;
-    }
-
     @Override
     public Class<? extends GuiScreen> mainConfigGuiClass()
     {
@@ -50,13 +38,7 @@ public class DefaultGuiFactory implements IModGuiFactory
     {
         this.minecraft = minecraftInstance;
     }
-
-    // @Override
-    // public GuiScreen createConfigGui(GuiScreen parentScreen)
-    // {
-    //     return new DefaultConfigGui(parentScreen, modid, title);
-    // }
-
+    
     @Override
     public Set<RuntimeOptionCategoryElement> runtimeGuiCategories()
     {
@@ -69,10 +51,7 @@ public class DefaultGuiFactory implements IModGuiFactory
         return null;
     }
 
-    public static IModGuiFactory forMod(ModContainer mod)
-    {
-        return new DefaultGuiFactory(mod.getModId(), mod.getName());
-    }
+    
 
     public static List<IConfigElement> collectConfigElements(Class<?>[] configClasses)
     {
@@ -143,16 +122,4 @@ public class DefaultGuiFactory implements IModGuiFactory
             return element;
         } 
     }
-
-
-    // public class DefaultConfigGui extends GuiConfig {
-    //     public DefaultConfigGui(GuiScreen parent) {
-    //         super(parent,
-    //             collectConfigElements(ConfigManager.getModConfigClasses(DefaultGuiFactory.this.modid)),
-    //             DefaultGuiFactory.this.modid,
-    //             false,
-    //             false,
-    //             DefaultGuiFactory.this.title);
-    //     }
-    // }
 }

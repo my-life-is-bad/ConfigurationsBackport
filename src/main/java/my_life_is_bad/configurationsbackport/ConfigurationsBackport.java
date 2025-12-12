@@ -16,7 +16,7 @@ public class ConfigurationsBackport {
     public static final String VERSION = "1.0";
 
 
-    @Config(modid = ConfigurationsBackport.MODID)
+    @Config(modid = MODID)
     public static class Configuration {
         @Config.Comment("String Entry: ")
         public static String stringEntry = "I am a string :D";
