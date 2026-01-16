@@ -13,7 +13,7 @@ import my_life_is_bad.configurationsbackport.common.config.Config;
 
 public class ConfigurationsBackport {
     public static final String MODID = "configurationsbackport";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "1.1";
 
 
     @Config(modid = MODID)
