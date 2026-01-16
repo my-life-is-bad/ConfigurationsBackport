@@ -6,7 +6,6 @@
   "mixins": [
     "MixinEnumHolder",
     "MixinFMLModContainer",
-    "MixinProperty",
     "MixinConfigElement"
   ],
   "client": [

@@ -1,20 +1,18 @@
-package net.minecraftforge.fml.client;
+package my_life_is_bad.configurationsbackport.fml.client;
 
 import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.stream.Collectors;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
-import net.minecraftforge.fml.client.config.GuiConfig;
+import net.minecraftforge.fml.client.IModGuiFactory;
 import net.minecraftforge.fml.client.config.IConfigElement;
 import net.minecraftforge.common.config.ConfigElement;
-import net.minecraftforge.fml.common.ModContainer;
-import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.common.config.Config;
+import my_life_is_bad.configurationsbackport.common.config.ConfigManager;
+import my_life_is_bad.configurationsbackport.common.config.Config;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.fml.client.config.DummyConfigElement.DummyCategoryElement;

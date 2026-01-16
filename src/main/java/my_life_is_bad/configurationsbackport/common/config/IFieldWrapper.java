@@ -17,7 +17,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-package net.minecraftforge.common.config;
+package my_life_is_bad.configurationsbackport.common.config;
+
+import net.minecraftforge.common.config.Configuration;
 
 /**
  * The objects are expected to get their wrapped field, the owning class, instance and category string on initialization.

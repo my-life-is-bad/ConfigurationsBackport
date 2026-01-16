@@ -3,12 +3,9 @@ package my_life_is_bad.configurationsbackport.mixins;
 import java.lang.reflect.Field;
 
 
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.common.FMLModContainer;
-import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.common.config.Config;
+import my_life_is_bad.configurationsbackport.common.config.ConfigManager;
+import my_life_is_bad.configurationsbackport.common.config.Config;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

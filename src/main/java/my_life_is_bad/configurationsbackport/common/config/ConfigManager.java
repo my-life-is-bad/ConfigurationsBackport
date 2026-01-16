@@ -17,7 +17,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-package net.minecraftforge.common.config;
+package my_life_is_bad.configurationsbackport.common.config;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -33,9 +33,12 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 
-import net.minecraftforge.common.config.Config.Comment;
-import net.minecraftforge.common.config.Config.LangKey;
-import net.minecraftforge.common.config.Config.Name;
+import my_life_is_bad.configurationsbackport.common.config.Config.Comment;
+import my_life_is_bad.configurationsbackport.common.config.Config.LangKey;
+import my_life_is_bad.configurationsbackport.common.config.Config.Name;
+import net.minecraftforge.common.config.ConfigCategory;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.LoaderException;

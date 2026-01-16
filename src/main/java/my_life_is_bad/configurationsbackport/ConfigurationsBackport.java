@@ -6,8 +6,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.common.config.Config;
+import my_life_is_bad.configurationsbackport.common.config.ConfigManager;
+import my_life_is_bad.configurationsbackport.common.config.Config;
 
 @Mod(modid = ConfigurationsBackport.MODID, version = ConfigurationsBackport.VERSION)
 

@@ -17,7 +17,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-package net.minecraftforge.common.config;
+package my_life_is_bad.configurationsbackport.common.config;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.GenericArrayType;
@@ -29,13 +29,16 @@ import java.util.regex.Pattern;
 
 import com.google.common.collect.Lists;
 
-import net.minecraftforge.common.config.Config.RangeDouble;
-import net.minecraftforge.common.config.Config.RangeInt;
+import my_life_is_bad.configurationsbackport.common.config.Config.RangeDouble;
+import my_life_is_bad.configurationsbackport.common.config.Config.RangeInt;
+import net.minecraftforge.common.config.ConfigCategory;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
 import org.apache.commons.lang3.StringUtils;
 
-import my_life_is_bad.configurationsbackport.interfaces.IMixinProperty;
+import my_life_is_bad.configurationsbackport.extentions.PropertyExt;
 
-import static net.minecraftforge.common.config.ConfigManager.*;
+import static my_life_is_bad.configurationsbackport.common.config.ConfigManager.*;
 
 public abstract class FieldWrapper implements IFieldWrapper
 {
@@ -358,7 +361,7 @@ public abstract class FieldWrapper implements IFieldWrapper
                     prop.comment = (NEW_LINE.join(new String[] { desc, "Min: " + ia.min(), "Max: " + ia.max() }));
                 else
                     prop.comment = (NEW_LINE.join(new String[] { "Min: " + ia.min(), "Max: " + ia.max() }));
-                ((IMixinProperty)(Object) prop).setHasSlidingControl(hasSlidingControl);
+                PropertyExt.setHasSlidingControl(prop, hasSlidingControl);
             }
 
             RangeDouble da = field.getAnnotation(RangeDouble.class);
@@ -370,7 +373,7 @@ public abstract class FieldWrapper implements IFieldWrapper
                     prop.comment = (NEW_LINE.join(new String[] { desc, "Min: " + da.min(), "Max: " + da.max() }));
                 else
                     prop.comment = (NEW_LINE.join(new String[] { "Min: " + da.min(), "Max: " + da.max() }));
-                ((IMixinProperty)(Object) prop).setHasSlidingControl(hasSlidingControl);
+                PropertyExt.setHasSlidingControl(prop, hasSlidingControl);
             }
         }
     }
@@ -409,7 +412,7 @@ public abstract class FieldWrapper implements IFieldWrapper
             prop.setLanguageKey(langKey);
             prop.setRequiresMcRestart(reqMCRestart);
             prop.setRequiresWorldRestart(reqWorldRestart);
-            ((IMixinProperty)(Object) prop).setHasSlidingControl(hasSlidingControl);
+            PropertyExt.setHasSlidingControl(prop, hasSlidingControl);
         }
 
         @Override

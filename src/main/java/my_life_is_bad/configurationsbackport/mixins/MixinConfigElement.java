@@ -1,6 +1,6 @@
 package my_life_is_bad.configurationsbackport.mixins;
 
-import my_life_is_bad.configurationsbackport.interfaces.IMixinProperty;
+import my_life_is_bad.configurationsbackport.extentions.PropertyExt;
 import my_life_is_bad.configurationsbackport.interfaces.IMixinConfigElement;
 import net.minecraftforge.common.config.Property;
 
@@ -17,6 +17,6 @@ public class MixinConfigElement implements IMixinConfigElement {
     @Override
     public boolean hasSlidingControl()
     {
-        return ((IMixinProperty)prop).hasSlidingControl();
+        return prop != null && PropertyExt.hasSlidingControl(prop);
     }
 }

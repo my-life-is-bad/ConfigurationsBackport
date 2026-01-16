@@ -17,7 +17,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-package net.minecraftforge.common.config;
+package my_life_is_bad.configurationsbackport.common.config;
 
 //=========================================================
 // Run away thar' be dragons!
@@ -31,6 +31,7 @@ import com.google.common.primitives.Floats;
 import com.google.common.primitives.Ints;
 import com.google.common.primitives.Shorts;
 
+import net.minecraftforge.common.config.Property;
 import net.minecraftforge.common.config.Property.Type;
 
 class TypeAdapters
