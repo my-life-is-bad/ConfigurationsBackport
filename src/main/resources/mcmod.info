@@ -5,7 +5,7 @@
   "description": "\u00A7aBackports the forge Config annotation system from 1.12.2 to 1.8.9.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/my-life-is-bad/ConfigurationsBackport",
   "updateUrl": "",
   "authorList": ["my_life_is_bad"],
   "credits": "",
