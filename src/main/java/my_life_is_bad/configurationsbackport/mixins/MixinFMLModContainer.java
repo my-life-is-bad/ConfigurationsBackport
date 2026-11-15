@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.discovery.ModDiscoverer;
 @Mixin(targets = "net.minecraftforge.fml.common.FMLModContainer")
 public class MixinFMLModContainer {
 
-    @Inject(method = "constructMod(Lnet/minecraftforge/fml/common/event/FMLConstructionEvent;)V", at = @At("HEAD"))
+    @Inject(method = "constructMod(Lnet/minecraftforge/fml/common/event/FMLConstructionEvent;)V", at = @At("HEAD"), remap = false)
     private void onConstructMod(FMLConstructionEvent event, CallbackInfo ci) {
         
          try {

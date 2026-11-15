@@ -1,5 +1,6 @@
 package my_life_is_bad.configurationsbackport.mixins;
 
+import net.minecraft.launchwrapper.Launch;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.mixin.MixinEnvironment;
@@ -9,6 +10,7 @@ import java.util.Map;
 
 @IFMLLoadingPlugin.MCVersion("1.8.9")
 public class MixinLoaderCorePlugin implements IFMLLoadingPlugin {
+
     public MixinLoaderCorePlugin() {
         MixinBootstrap.init();
         Mixins.addConfiguration("mixins.configurationsbackport.json");

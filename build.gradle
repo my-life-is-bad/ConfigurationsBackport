@@ -16,9 +16,17 @@ plugins {
 
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'idea'
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main")
+    }
+}
 
 //TODO: Change the version, group, and archivesBaseName to your own.
-version = "1.1" // The version number of your mod.
+version = "1.2" // The version number of your mod.
 group = "my_life_is_bad.configurationsbackport" // This is the group of the mod (usually domain or your name -> at.manuthebyte)
 archivesBaseName = "ConfigurationsBackport-1.8.9" // This is the name of the jar that is generated.
 
@@ -41,6 +49,7 @@ configurations {
 // Configures the SpongePowered Repository
 repositories {
     maven { url 'https://repo.spongepowered.org/maven/' }
+    maven { url 'https://maven.cleanroommc.com' }
 }
 
 def systemOs = System.getProperty("os.name").toLowerCase(Locale.ENGLISH)
@@ -51,58 +60,7 @@ def systemOs = System.getProperty("os.name").toLowerCase(Locale.ENGLISH)
  * compile -> library only available at compile time (not accessible at runtime)
  */
 dependencies {
-    compile files("libs/ASMUtil-2.8.0.jar")
-    shade('org.spongepowered:mixin:0.7.10-SNAPSHOT') {
-        exclude module: 'launchwrapper'
-        exclude module: 'guava'
-        exclude module: 'gson'
-        exclude module: 'commons-io'
-        exclude module: 'log4j-core'
-    }
-
-    
-    if (systemOs.contains("mac"))
-    {
-        compile 'org.lwjgl.lwjgl:lwjgl_util:2.9.4-nightly-20150209'
-        compile 'org.lwjgl.lwjgl:lwjgl:2.9.4-nightly-20150209'
-        compile 'org.lwjgl.lwjgl:lwjgl-platform:2.9.4-nightly-20150209'
-    }
-    else if (systemOs.contains("linux"))
-    {
-        compile 'org.lwjgl.lwjgl:lwjgl_util:2.9.4-babric.1'
-        compile 'org.lwjgl.lwjgl:lwjgl:2.9.4-babric.1'
-        compile 'org.lwjgl.lwjgl:lwjgl-platform:2.9.4-babric.1'
-    }
-}
-
-if (systemOs.contains("mac"))
-{
-    configurations.all
-    {
-        resolutionStrategy
-        {
-            dependencySubstitution
-            {
-                substitute module('org.lwjgl.lwjgl:lwjgl_util:2.9.2-nightly-201408222') with module('org.lwjgl.lwjgl:lwjgl_util:2.9.4-nightly-20150209')
-                substitute module('org.lwjgl.lwjgl:lwjgl:2.9.2-nightly-201408222') with module('org.lwjgl.lwjgl:lwjgl:2.9.4-nightly-20150209')
-            }
-            force 'org.lwjgl.lwjgl:lwjgl-platform:2.9.4-nightly-20150209'
-        }
-    }
-} else if (systemOs.contains("linux"))
-{
-    configurations.all
-    {
-        resolutionStrategy
-        {
-            dependencySubstitution
-            {
-                substitute module('org.lwjgl.lwjgl:lwjgl_util:2.9.4-nightly-20150209') using module('org.lwjgl.lwjgl:lwjgl_util:2.9.4-babric.1')
-                substitute module('org.lwjgl.lwjgl:lwjgl:2.9.4-nightly-20150209') using module('org.lwjgl.lwjgl:lwjgl:2.9.4-babric.1')
-            }
-            force 'org.lwjgl.lwjgl:lwjgl-platform:2.9.4-babric.1'
-        }
-    }
+    compile 'zone.rong:mixinbooter:11.0'
 }
 
 
@@ -152,10 +110,8 @@ jar {
     manifest.attributes(
         "FMLCorePlugin" : "my_life_is_bad.configurationsbackport.mixins.MixinLoaderCorePlugin",
         "ForceLoadAsMod": true,
-        "TweakOrder": 0,
         "ModSide": "CLIENT",
         'FMLCorePluginContainsFMLMod': true,
-        'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
         'MixinConfigs': 'mixins.configurationsbackport.json'
     )
 }

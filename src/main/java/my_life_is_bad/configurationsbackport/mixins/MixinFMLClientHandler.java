@@ -15,13 +15,7 @@ public class MixinFMLClientHandler {
 
     @Shadow private BiMap<ModContainer, IModGuiFactory> guiFactories;
 
-    @Redirect(
-        method = "finishMinecraftLoading",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraftforge/fml/common/ModContainer;getGuiClassName()Ljava/lang/String;"
-        )
-    )
+    @Redirect(method = "finishMinecraftLoading", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/fml/common/ModContainer;getGuiClassName()Ljava/lang/String;"), remap = false)
     private String injectGuiClassName(ModContainer mc) {
         String original = mc.getGuiClassName();
         if (original == null || original.isEmpty()) {
@@ -31,5 +25,4 @@ public class MixinFMLClientHandler {
         }
         return original;
     }
-
 }

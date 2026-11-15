@@ -2,6 +2,7 @@
   "required": true,
   "minVersion": "0.7",
   "package": "my_life_is_bad.configurationsbackport.mixins",
+  "refmap" : "mixins.configurationsbackport.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "MixinEnumHolder",
